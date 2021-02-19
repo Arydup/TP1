@@ -47,7 +47,6 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/materialui.svg?ic=menu&color=000" width="32" height="32"></button>
-			<!-- ?php esc_html_e( 'Primary Menu', 'theme-4w4' ); ?>-->
 			<?php
 			wp_nav_menu(
 				array(
