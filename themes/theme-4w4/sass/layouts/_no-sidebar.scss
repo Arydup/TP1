@@ -21,7 +21,23 @@
 		#secondary - widget-area	
 		#colophon - .site-footer
 */
+.site-branding{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#colophon{
+	text-align: center;
+	@include media-desktop{
+		text-align: left;
+	}
+}
 
 .site-branding, #primary, #colophon {
-	margin-left: 3rem;
+	@include media-desktop{
+		margin-left: 3rem;
+		display: block;
+	}
 }
+

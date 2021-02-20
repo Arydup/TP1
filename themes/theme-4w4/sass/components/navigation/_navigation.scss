@@ -1,16 +1,19 @@
 .main-navigation {
 	display: block;
 	width: 100%;
-
 	ul {
-		display: none;
+		transform: translateY(-120%);
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: #005;
+		background-color: rgb(47, 47, 47);
 		position: absolute;
 		width: 100%;
 
+		@include media-desktop{
+			transition: none;
+			transform: translateY(0);
+		}
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -25,7 +28,6 @@
 			}
 
 			li {
-
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
@@ -76,6 +78,8 @@
 Bouton burger
 ------------------------------------------------------------------------------*/
 .menu-toggle{
+	overflow: hidden;
+
 	padding: 0rem;
 	border: 0;
 	margin-left: 3rem;
@@ -85,11 +89,11 @@ Bouton burger
 
 .menu-toggle:hover,
 .menu-toggle:focus{
-	background: rgb(243, 235, 235);
+	background: rgb(172, 172, 172);
 }
 	
 .menu-toggle:focus{
-	outline: 1px solid white;
+	//outline: 1px solid white;
 	outline-offset: -4px;
 }
 
@@ -107,17 +111,31 @@ Bouton burger
 	display: block;
 }
 
+.menu{
+	position: relative;
+	height: 144px;
+	overflow: hidden;
+}
+.nav-menu{
+	transform: translateY(-120%);
+	//transition: all 1s;
+}
+
+.main-navigation.toggled .nav-menu{
+	transition: all 1s;
+	transform: translateY(0);
+}
+
 /* -----------------------------------------------------------------------------
 Version Tablette
 ------------------------------------------------------------------------------*/
-@media screen and (min-width: 37.5em) {
-
+@media screen and (min-width: 800px) {
 	.menu-toggle {
 		display: none;
 		border: 0;
 	}
 
-	.main-navigation ul {
+	.main-navigation.toggled ul, .main-navigation ul {
 		display: flex;
 		height: 2rem;
 		justify-content: space-around;
