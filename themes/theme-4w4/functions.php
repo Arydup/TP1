@@ -154,7 +154,15 @@ function theme_4w4_scripts() {
 	wp_style_add_data( 'theme-4w4-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'theme-4w4-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	
+	// Pour le caroussel uniquement sur la page d'accueil
+	//wp_enqueue_script( 'theme-4w4-caroussel', get_template_directory_uri() . '/js/caroussel.js', array(), _S_VERSION, true );
+	wp_register_script( 'theme-4w4-caroussel', get_template_directory_uri() . '/js/caroussel.js', array(), _S_VERSION, true );
+	if(is_front_page()){
+		wp_enqueue_script( 'theme-4w4-caroussel');
+	}
 
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
