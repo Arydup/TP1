@@ -22,7 +22,7 @@ body.home::after{
     right: 0;
     clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
     z-index: -1;
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(158, 158, 158);
 
     @include media-desktop {
         clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
