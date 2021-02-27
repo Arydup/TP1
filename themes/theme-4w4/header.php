@@ -49,21 +49,26 @@
 		if ( is_front_page()) :?>
 		<!--Début du caroussel-->
 		<section class="caroussel">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
+			<div></div>
+			<div></div>
+			<div></div>
 		</section>
 		<!--Faire une boucle pour voir chaque div présente-->
-		<button id="un">1</button>
-		<button id="deux">2</button>
-		<button id="trois">3</button>
-		<!--Fin de caroussel-->
+		<section class="lesBoutons">
+			<a id="un"></a>
+			<a id="deux"></a>
+			<a id="trois"></a>
+		</section>
+		<!--Fin de carroussel-->
 		<?php endif ?>
-		
-
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/materialui.svg?ic=menu&color=000" width="32" height="32"></button>
+			<button id="burger" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<!--<img src="https://s2.svgbox.net/materialui.svg?ic=menu&color=000" width="32" height="32">-->
+				<div></div>
+				<div></div>
+				<div></div>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(

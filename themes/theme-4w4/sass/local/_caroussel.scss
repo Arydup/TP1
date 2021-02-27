@@ -12,14 +12,54 @@
 
         &:nth-of-type(1){
             background-color: aquamarine;
+            background-image: url(https://image.freepik.com/photos-gratuite/concept-texture-fond-ecran-mur-brique_53876-31759.jpg);
+            background-size: cover;
         }
         &:nth-of-type(2){
             background-color: blueviolet;
+            background-image: url(https://images7.alphacoders.com/111/thumb-350-1113092.png);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         &:nth-of-type(3){
             background-color: brown;
+            background-image: url(https://img.freepik.com/vecteurs-libre/fond-ciel-brillant-soleil-vague_1017-19637.jpg?size=626&ext=jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
     }//Fin du div
+}
 
+/*------------------------------------------------------------------------------
+Les boutons ronds de sélection du carroussel
+------------------------------------------------------------------------------*/
+.lesBoutons{
+    width: 100vw;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        line-height: normal;
+        padding: 0px;
+        border: 2px solid rgb(119, 119, 119);
+        margin: 2px;
+        transition: all 1s;
+        &:nth-child(1){
+            background-color: rgb(187, 246, 110);
+        }
+        &:nth-child(2){
+            background-color: rgb(218, 121, 2);
+        }
+        &:nth-child(3){
+            background-color: rgb(252, 142, 199);
+        }
+        &:hover{
+            background-color: rgb(128, 61, 61);
+        }
+    }
 }

@@ -25,23 +25,17 @@ body {
 		#secondary - widget-area	
 		#colophon - .site-footer
 */
-.site-branding{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
 
-#colophon{
-	text-align: center;
+.site-branding, #primary, #colophon {
+	margin-left: .5rem;
 	@include media-desktop{
-		text-align: left;
+		margin-left: 3rem;
 	}
 }
 
-.site-branding, #primary, #colophon {
+h1{
 	@include media-desktop{
 		margin-left: 3rem;
-		display: block;
 	}
 }
 
