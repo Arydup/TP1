@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: theme-4w4
 Theme URI: http://underscores.me/
@@ -662,6 +663,10 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+body {
+  overflow-x: hidden;
+}
+
 .no-sidebar .site {
   display: grid;
   grid-template-columns: auto;
@@ -679,26 +684,19 @@ textarea {
 		#secondary - widget-area	
 		#colophon - .site-footer
 */
-.site-branding {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#colophon {
-  text-align: center;
-}
-
-@media (min-width: 800px) {
-  #colophon {
-    text-align: left;
-  }
+.site-branding, #primary, #colophon {
+  margin-left: .5rem;
 }
 
 @media (min-width: 800px) {
   .site-branding, #primary, #colophon {
     margin-left: 3rem;
-    display: block;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    margin-left: 3rem;
   }
 }
 
@@ -709,11 +707,12 @@ textarea {
 --------------------------------------------- */
 .main-navigation {
   display: block;
-  width: 100%;
+  width: 100vw;
+  position: relative;
 }
 
 .main-navigation ul {
-  transform: translateY(-120%);
+  transform: translateY(-100%);
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -771,29 +770,17 @@ textarea {
 Bouton burger
 ------------------------------------------------------------------------------*/
 .menu-toggle {
-  overflow: hidden;
   padding: 0rem;
   border: 0;
   margin-left: 3rem;
-  transition: transform .20s;
-  transform: rotate(0);
 }
 
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background: #acacac;
-}
-
-.menu-toggle:focus {
-  outline-offset: -4px;
-}
-
+/*
+.menu-toggle:focus{
+	outline-offset: -4px;
+}*/
 .menu-toggle:active {
   transform: scale(0.99);
-}
-
-.main-navigation.toggled .menu-toggle {
-  transform: rotate(90deg);
 }
 
 /* Small menu. */
@@ -802,6 +789,9 @@ Bouton burger
   display: block;
 }
 
+/* -----------------------------------------------------------------------------
+Menu déroulant de navigation version téléphone
+------------------------------------------------------------------------------*/
 .menu {
   position: relative;
   height: 144px;
@@ -809,11 +799,11 @@ Bouton burger
 }
 
 .nav-menu {
-  transform: translateY(-120%);
+  transform: translateY(-100%);
+  transition: all 1s;
 }
 
 .main-navigation.toggled .nav-menu {
-  transition: all 1s;
   transform: translateY(0);
 }
 
@@ -827,10 +817,14 @@ Version Tablette
   }
   .main-navigation.toggled ul, .main-navigation ul {
     display: flex;
+    width: 100vw;
     height: 2rem;
     justify-content: space-around;
     align-items: center;
     position: static;
+  }
+  .main-navigation.toggled ul a, .main-navigation ul a {
+    margin-left: 0;
   }
 }
 
@@ -1078,17 +1072,24 @@ Version Tablette
   margin-bottom: 1.5em;
 }
 
-/* Local
+/* Local/accueil
 --------------------------------------------- */
-body {
+body.home {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
 }
 
+body.home #primary {
+  margin-left: 0;
+  width: 100vw;
+}
+
+/*------------------------------------------------------------------------------
+Le clip-path et les propriétés de l'accueil
+------------------------------------------------------------------------------*/
 body.home::after {
   width: 100%;
-  height: 190%;
+  height: 200%;
   content: "";
   position: absolute;
   top: 0;
@@ -1102,13 +1103,13 @@ body.home::after {
 
 @media (min-width: 800px) {
   body.home::after {
-    clip-path: polygon(90% 0, 100% 0, 100% 100%, 70% 100%);
+    clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
   }
 }
 
 .site-title {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(0.9rem, -0.875rem + 5.333vw, 2.5rem);
+  font-size: clamp(0.8rem, -0.875rem + 5.633vw, 2.5rem);
   font-weight: bold;
   text-decoration: none;
   color: #003;
@@ -1126,7 +1127,7 @@ body.home::after {
 
 .site-description {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(0.8rem, -0.875rem + 8.333vw, 1.5rem);
+  font-size: clamp(1rem, -0.875rem + 5.633vw, 2rem);
   font-weight: normal;
   color: #003;
   margin-top: 0;
@@ -1164,11 +1165,6 @@ body.home::after {
 
 .accueil img {
   display: block;
-  /*text-align: center;
-        position: absolute;
-        margin: 0;
-        left: 0;
-        right: 0;*/
 }
 
 .home article {
@@ -1186,5 +1182,218 @@ body.home::after {
 
 .accueil .wp-block-column {
   margin-left: 0px;
+}
+
+/* Local/caroussel
+--------------------------------------------- */
+.caroussel {
+  display: flex;
+  width: 300vw;
+  height: 20vh;
+  transition: transform .5s;
+}
+
+.caroussel div {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caroussel div:nth-of-type(1) {
+  background-color: aquamarine;
+  background-image: url(https://image.freepik.com/photos-gratuite/concept-texture-fond-ecran-mur-brique_53876-31759.jpg);
+  background-size: cover;
+}
+
+.caroussel div:nth-of-type(2) {
+  background-color: blueviolet;
+  background-image: url(https://images7.alphacoders.com/111/thumb-350-1113092.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.caroussel div:nth-of-type(3) {
+  background-color: brown;
+  background-image: url(https://img.freepik.com/vecteurs-libre/fond-ciel-brillant-soleil-vague_1017-19637.jpg?size=626&ext=jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*------------------------------------------------------------------------------
+Les boutons ronds de sélection du carroussel
+------------------------------------------------------------------------------*/
+.lesBoutons {
+  width: 100vw;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lesBoutons a {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  line-height: normal;
+  padding: 0px;
+  border: 2px solid #777777;
+  margin: 2px;
+  transition: all 1s;
+}
+
+.lesBoutons a:nth-child(1) {
+  background-color: #bbf66e;
+}
+
+.lesBoutons a:nth-child(2) {
+  background-color: #da7902;
+}
+
+.lesBoutons a:nth-child(3) {
+  background-color: #fc8ec7;
+}
+
+.lesBoutons a:hover {
+  background-color: #803d3d;
+}
+
+/* Local/burger
+--------------------------------------------- */
+/* -----------------------------------------------------------------------------
+Variables Sass
+------------------------------------------------------------------------------*/
+/*Empêche les animations de fonctionner lors du changement de grandeur de la fenêtre*/
+.arret-animation .nav-menu, .arret-animation .caroussel {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* -----------------------------------------------------------------------------
+Bouton burger
+------------------------------------------------------------------------------*/
+#burger {
+  position: relative;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@media (min-width: 800px) {
+  #burger {
+    display: none;
+  }
+}
+
+#burger div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#burger div:nth-of-type(1) {
+  clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
+  background-color: #c1f62d;
+}
+
+#burger div:nth-of-type(2) {
+  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  background-color: #3c00ff;
+}
+
+#burger div:nth-of-type(3) {
+  clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
+  background-color: #ff0077;
+  z-index: 1;
+}
+
+/* -----------------------------------------------------------------------------
+Animations de la première barre bar1 (Créer une boucle pour le pattern)
+------------------------------------------------------------------------------*/
+@keyframes ouvrirX1 {
+  0% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
+  }
+  100% {
+    clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+}
+
+@keyframes fermerX1 {
+  0% {
+    clip-path: polygon(8% -8%, 108% 92%, 92% 108%, -8% 8%);
+  }
+  100% {
+    clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
+  }
+}
+
+.ouvrirX1 {
+  animation: ouvrirX1 0.2s both;
+}
+
+.fermerX1 {
+  animation: fermerX1 0.2s both;
+}
+
+/* -----------------------------------------------------------------------------
+Animations de la deuxième barre bar2 (Créer une boucle pour le pattern)
+------------------------------------------------------------------------------*/
+@keyframes ouvrirX2 {
+  0% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+  100% {
+    clip-path: polygon(50% 45%, 50% 45%, 50% 55%, 50% 55%);
+  }
+}
+
+@keyframes fermerX2 {
+  0% {
+    clip-path: polygon(50% 45%, 50% 45%, 50% 55%, 50% 55%);
+  }
+  100% {
+    clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+  }
+}
+
+.ouvrirX2 {
+  animation: ouvrirX2 0.2s both;
+}
+
+.fermerX2 {
+  animation: fermerX2 0.2s both;
+}
+
+/* -----------------------------------------------------------------------------
+Animations de la dernière barre bar3 (Créer une boucle pour le pattern)
+------------------------------------------------------------------------------*/
+@keyframes ouvrirX3 {
+  0% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
+  }
+  100% {
+    clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+}
+
+@keyframes fermerX3 {
+  0% {
+    clip-path: polygon(-8% 92%, 92% -8%, 108% 8%, 8% 108%);
+  }
+  100% {
+    clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
+  }
+}
+
+.ouvrirX3 {
+  animation: ouvrirX3 0.2s both;
+}
+
+.fermerX3 {
+  animation: fermerX3 0.2s both;
 }
 /*# sourceMappingURL=style.css.map */
