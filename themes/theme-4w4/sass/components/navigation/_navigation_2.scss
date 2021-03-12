@@ -1,0 +1,160 @@
+.main-navigation {
+	display: block;
+	width: 100vw;
+	position: relative;
+	ul {
+		transform: translateY(-100%);
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+		background-color: rgb(47, 47, 47);
+		position: absolute;
+		width: 100vw;
+		@include media-desktop{
+			transition: none;
+			transform: translateY(0);
+		}
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul,
+				&.focus > ul {
+					display: block;
+					left: auto;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+		}
+	}
+
+	li {
+		position: relative;
+
+		&:hover > a,
+		&.focus > a {
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+/* -----------------------------------------------------------------------------
+Bouton burger
+------------------------------------------------------------------------------*/
+.menu-toggle{
+	padding: 0rem;
+	border: 0;
+	margin-left: 3rem;
+}
+
+/*
+.menu-toggle:focus{
+	outline-offset: -4px;
+}*/
+
+.menu-toggle:active{
+	transform: scale(0.99);
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+/* -----------------------------------------------------------------------------
+Menu déroulant de navigation version téléphone
+------------------------------------------------------------------------------*/
+.menu{
+	position: relative;
+	height: 144px;
+	overflow: hidden;
+}
+.nav-menu{
+	transform: translateY(-100%);
+	transition: all 1s;
+}
+
+.main-navigation.toggled .nav-menu{
+	transform: translateY(0);
+}
+
+/* -----------------------------------------------------------------------------
+Version Tablette
+------------------------------------------------------------------------------*/
+@media screen and (min-width: 800px) {
+	.menu-toggle {
+		display: none;
+		border: 0;
+	}
+
+	.main-navigation.toggled ul, .main-navigation ul {
+		display: flex;
+		width: 100vw;
+		height: 2rem;
+		justify-content: space-around;
+		align-items: center;
+		position: static;
+		a{
+			margin-left: 0;
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+	}
+
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+		text-align: end;
+		flex: 1 0 50%;
+	}
+}

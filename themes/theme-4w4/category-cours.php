@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-// categorie-cours.PHP
+////////////////////////////////////////////// CATEGORY-COURS.PHP
 	<main id="primary" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -36,7 +36,7 @@ get_header();
                 echo '<p>' . $session . ' ' . $titre . '</p>';
                 $precedant = $session;
 			endwhile;
-
+            
 		endif;
 		?>
 

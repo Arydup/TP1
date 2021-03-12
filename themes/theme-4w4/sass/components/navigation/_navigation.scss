@@ -1,70 +1,75 @@
 .main-navigation {
 	display: block;
 	width: 100vw;
-	position: relative;
+	
+
 	ul {
-		transform: translateY(-100%);
+		display: none;
+		position : absolute;
+		width : 100%;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background-color: rgb(47, 47, 47);
-		position: absolute;
-		width: 100vw;
-		@include media-desktop{
-			transition: none;
-			transform: translateY(0);
-		}
+		background-color: #000;
+
+		//text-align: left;
+		//left: 0;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
+			//float: left;
 			position: absolute;
 			top: 100%;
+			/* ul vient de la gauche, ul animé */
+			transition: left .3s;
 			left: -999em;
 			z-index: 99999;
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
-				}
-			}
-
 			a {
-				width: 200px;
+				width: 100%;
+				padding-left: 20px;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
+			
+		}	/* sub-menu */
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+			left: 0;
 		}
-	}
+		
+		li > a[href="#"]::after {
+			content: "+";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 90%;
+			right: 0;
+		}
+		li.focus > a[href="#"]::after,
+		li > a[href="#"]:hover::after {
+			content: "-";
+		}
+
+	}	/* nav-menu(ul principal) */
 
 	li {
 		position: relative;
+	 	flex : 1;
 
+		 
 		&:hover > a,
 		&.focus > a {
+			//Peut faire qqc ici
 		}
+		
+
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
+		padding: .5rem;
 	}
 
 	.current_page_item > a,
@@ -72,70 +77,75 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
+}	/* Fin de main-navigation */
+/* -----------------------------------------------------------------------------
+Bouton burger 
+------------------------------------------------------------------------------*/
+.menu-toggle {
+	padding :0;
+//	transition : transform .25s;
+//	transform : rotate(0deg);
+	border : 0;
+}
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background: #fafbfc;
 }
 
-/* -----------------------------------------------------------------------------
-Bouton burger
-------------------------------------------------------------------------------*/
-.menu-toggle{
-	padding: 0rem;
-	border: 0;
-	margin-left: 3rem;
+.menu-toggle:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.menu-toggle:active {
+    transform: scale(0.99);
 }
 
 /*
-.menu-toggle:focus{
-	outline-offset: -4px;
-}*/
-
-.menu-toggle:active{
-	transform: scale(0.99);
+.main-navigation.toggled .menu-toggle{
+	transform : rotate(90deg);
 }
+*/
 
-/* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 }
+/* ---------------------------------------------------------------------------
+menu tablette
+------------------------------------------------------------------------------ */
+@media screen and (min-width: 37.5em) {
 
-/* -----------------------------------------------------------------------------
-Menu déroulant de navigation version téléphone
-------------------------------------------------------------------------------*/
-.menu{
-	position: relative;
-	height: 144px;
-	overflow: hidden;
-}
-.nav-menu{
-	transform: translateY(-100%);
-	transition: all 1s;
-}
-
-.main-navigation.toggled .nav-menu{
-	transform: translateY(0);
-}
-
-/* -----------------------------------------------------------------------------
-Version Tablette
-------------------------------------------------------------------------------*/
-@media screen and (min-width: 800px) {
 	.menu-toggle {
 		display: none;
-		border: 0;
 	}
-
-	.main-navigation.toggled ul, .main-navigation ul {
+	.main-navigation.toggled ul,
+	.main-navigation ul {
 		display: flex;
-		width: 100vw;
-		height: 2rem;
+		position : static;
 		justify-content: space-around;
-		align-items: center;
-		position: static;
-		a{
-			margin-left: 0;
+
+		a[href="#"]::after{
+			display: none;
+		}
+		
+		li:hover ul{
+			display: block;
+			position: absolute;
+			/* Optimiser les valeurs */
+			width: 300px;
+			height: 500px;
+		}
+		ul{
+			display: none;
 		}
 	}
 }
+
+
+/* --------------------------------------------------------------------------- 
+------------------------------------------------------------------------------ */
+
 
 .comment-navigation,
 .posts-navigation,
