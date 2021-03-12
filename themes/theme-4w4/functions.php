@@ -197,3 +197,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function extraireCours($query){
+	if($query->is_category('cours')){
+		$query-set('posts_per_page', -1);
+		$query-set('orderby', 'title');
+		$query-set('order', 'asc');
+	}
+}
+add_action('pre_get_posts','extraireCours');

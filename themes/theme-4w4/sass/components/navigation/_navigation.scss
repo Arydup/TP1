@@ -9,7 +9,7 @@
 		padding-left: 0;
 		background-color: rgb(47, 47, 47);
 		position: absolute;
-		width: 100%;
+		width: 100vw;
 		@include media-desktop{
 			transition: none;
 			transform: translateY(0);
