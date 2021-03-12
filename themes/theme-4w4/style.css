@@ -719,6 +719,17 @@ body {
   padding-left: 0;
   background-color: #000;
   /* sub-menu */
+  /*
+		&:first-child li{
+			border-top: 2px dotted aquamarine;
+		}
+		&:first-child li > a{
+			border-top: none;
+		}*/
+}
+
+.main-navigation ul a {
+  border-top: 1px solid yellow;
 }
 
 .main-navigation ul ul {
@@ -729,11 +740,13 @@ body {
   transition: left .3s;
   left: -999em;
   z-index: 99999;
+  border-top: 2px dashed white;
 }
 
 .main-navigation ul ul a {
   width: 100%;
   padding-left: 20px;
+  border-top: none;
 }
 
 .main-navigation ul li:hover > ul,
@@ -742,7 +755,7 @@ body {
 }
 
 .main-navigation ul li > a[href="#"]::after {
-  content: "+";
+  content: "\2B9E";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -754,7 +767,7 @@ body {
 
 .main-navigation ul li.focus > a[href="#"]::after,
 .main-navigation ul li > a[href="#"]:hover::after {
-  content: "-";
+  content: "\2B9F";
 }
 
 .main-navigation li {
@@ -829,6 +842,9 @@ menu tablette
   .main-navigation.toggled ul ul,
   .main-navigation ul ul {
     display: none;
+  }
+  .main-navigation ul a {
+    border-top: none;
   }
 }
 
