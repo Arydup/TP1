@@ -693,12 +693,6 @@ body {
   }
 }
 
-@media (min-width: 800px) {
-  h1 {
-    margin-left: 3rem;
-  }
-}
-
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -1204,6 +1198,14 @@ body.home::after {
 
 .accueil .wp-block-column {
   margin-left: 0px;
+}
+
+.home .site-main p {
+  margin-left: 3em;
+}
+
+.page-title {
+  margin-left: 3rem;
 }
 
 /* Local/caroussel
