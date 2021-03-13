@@ -836,7 +836,7 @@ menu tablette
     display: block;
     position: absolute;
     /* Optimiser les valeurs */
-    width: 300px;
+    width: 250px;
     height: 500px;
   }
   .main-navigation.toggled ul ul,
