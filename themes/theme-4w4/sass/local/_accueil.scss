@@ -54,7 +54,7 @@ body.home::after{
     color: #003;
     margin-top: 0;
 }
-
+/*
 .accueil{
     margin: 0 auto;
     padding: 0px;
@@ -101,4 +101,37 @@ body.home::after{
 
 .page-title{
     margin-left: 3rem;
+}*/
+
+.liste-cours{
+    display: flex;
+    flex-direction: column;
+
+    section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap ;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            @include media-desktop{
+                width: 30%;
+            }
+            border: 1px solid black;
+
+            p{
+                font-size: .7rem;
+                font-weight: bold;
+            }
+            a{
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+        } //Fin article
+    } //Fin section
 }
