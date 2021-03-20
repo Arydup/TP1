@@ -11,10 +11,16 @@
 }
 
 $desktop__accueil : 800px;
-$desktop__tablette : 400px;
+$desktop__tablette : 600px;
 
 @mixin media-desktop{
 	@media (min-width : #{$desktop__accueil}){
+		@content;
+	}
+}
+
+@mixin media-tablette{
+	@media (min-width : #{$desktop__tablette}){
 		@content;
 	}
 }

@@ -21,7 +21,7 @@ Bouton burger
     border: none;
     border-radius: 50%;
     overflow: hidden;
-    @include media-desktop{
+    @include media-tablette{
         display: none;
     }
     div{
