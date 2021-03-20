@@ -42,7 +42,7 @@ get_header();
 				<section>
 				<?php endif ?>
 
-				<article>
+				<article class="<?= $typeCours=='Image 2d/3d'? 'Image_2d_3d': $typeCours; ?>">
 					<p><?php echo $sigle . " - " . $nbHeures . " - " . $typeCours; ?></p>
 					<a href="<?php echo get_permalink();?>"><?php echo $titre; ?></a>
 					<p>Session : <?php echo $session; ?></p>
