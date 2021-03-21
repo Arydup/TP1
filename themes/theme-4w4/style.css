@@ -728,6 +728,7 @@ body {
 
 .main-navigation ul a {
   border-top: 1px solid yellow;
+  transition: all ease .5s;
 }
 
 .main-navigation ul ul {
@@ -1226,10 +1227,16 @@ body.home::after {
   margin: 10px;
   padding: 15px;
   box-shadow: inset 4px 4px 15px 0px #000000;
+  transition: all ease 0.5s;
   /* -----------------------------------------------------------------
             Ajout d'une division par rapport à l'exercice dans les sections
             pour mettre un fond blanc devant le fond de couleur
             ------------------------------------------------------------------*/
+}
+
+.liste-cours section article:hover {
+  color: azure;
+  font-size: 1.7rem;
 }
 
 @media (min-width: 600px) {
@@ -1322,15 +1329,23 @@ body.home::after {
 }
 
 .caroussel div a {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
   text-decoration: none;
+  transition: all ease 0.5s;
 }
 
-.caroussel div a:visited, .caroussel div a:active, .caroussel div a:link, .caroussel div a:hover {
+.caroussel div a:visited, .caroussel div a:active, .caroussel div a:link {
   color: inherit;
+}
+
+.caroussel div a:hover {
+  color: azure;
+  transform: scale(1.2);
 }
 
 .caroussel div:nth-of-type(1) {
@@ -1354,11 +1369,6 @@ body.home::after {
 
 .caroussel div:nth-of-type(5) {
   background-color: #501752;
-}
-
-.caroussel div a {
-  width: 100%;
-  height: 100%;
 }
 
 /*------------------------------------------------------------------------------
