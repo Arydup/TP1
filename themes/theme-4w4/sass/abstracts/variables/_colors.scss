@@ -9,7 +9,7 @@ $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
 $color__link: #4169e1; //royalblue
-$color__link-visited: #800080; //purple
+$color__link-visited: #353535; //purple
 $color__link-hover: #191970; //midnightblue
 $color__text-main: #404040;
 
@@ -17,12 +17,26 @@ $color__linkmenu: #d6d6d5;
 $color__linkmenu-visited: #868686;
 $color__linkmenu-hover: #ffffff;
 
+/*Couleurs des titres*/
 $color__linktitle: #9c9c9c;
 $color__linktitle-visited: #2f2f2f;
 $color__linktitle-hover: #2e2e2e;
 
+/*Couleurs pour les boutons*/
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
+
+/* Couleurs pour les liens dans les sections de la page d'accueil*/
+$color__link__web: #3e6b51; //royalblue
+
+$color__link__specifique: #8b3148; //royalblue
+
+$color__link__jeu: #223777;
+
+$color__link__imagerie: #7e7823;
+
+$color__link__imagerie: #501752;
+
