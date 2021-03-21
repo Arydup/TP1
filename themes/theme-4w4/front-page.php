@@ -10,6 +10,25 @@
 get_header();
 ?>
 ////////////////////////////////////////////// FRONT-PAGE.PHP
+<!------------------------------------------------------------------------------
+Carroussel
+------------------------------------------------------------------------------->
+<?php $tous_les_cours = ["Web", "Spécifique", "Jeu", "Image 2d/3d", "Conception"]?>
+
+		<!--Début du caroussel-->
+		<section class="caroussel">
+			<?php
+				foreach($tous_les_cours as $cours): ?>
+					<div><a href="#<?= $cours; ?>"><?= $cours; ?></a></div>
+			<?php endforeach; ?>
+		</section>
+		<!--Faire une boucle pour voir chaque div présente-->
+		<section class="lesBoutons">
+			<?php
+				foreach($tous_les_cours as $cours): ?>
+					<input type="radio" id="<?= array_search($cours, $tous_les_cours); ?>" name="chiffreBouton" value="<?= array_search($cours, $tous_les_cours); ?>">
+				<?php endforeach; ?>
+		</section>
 
 	<main id="primary" class="site-main">
 
@@ -25,6 +44,7 @@ get_header();
 			<section class="liste-cours">
 			<?php
 			/* Start the Loop */
+			//global $tous_les_cours;
             $precedant = "XXXXXX";
 			while ( have_posts() ) :
 				the_post();
@@ -39,7 +59,8 @@ get_header();
 
 				</section>
 				<?php endif ?>
-				<h2><?php echo $typeCours?></h2>
+				
+				<h2 id="<?= $typeCours?>"><?php echo $typeCours?></h2>
 				<section>
 				<?php endif ?>
 

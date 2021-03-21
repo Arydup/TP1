@@ -44,23 +44,6 @@
 				<p class="site-description"><?php echo $theme_4w4_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-		
-		<?php
-		if ( is_front_page()) :?>
-		<!--Début du caroussel-->
-		<section class="caroussel">
-			<div></div>
-			<div></div>
-			<div></div>
-		</section>
-		<!--Faire une boucle pour voir chaque div présente-->
-		<section class="lesBoutons">
-			<a id="un"></a>
-			<a id="deux"></a>
-			<a id="trois"></a>
-		</section>
-		<!--Fin de carroussel-->
-		<?php endif ?>
 
 		<nav id="site-navigation" class="main-navigation">
 			<button id="burger" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">

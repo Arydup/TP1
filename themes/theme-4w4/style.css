@@ -715,6 +715,7 @@ body {
   margin: 0;
   padding-left: 0;
   background-color: #000;
+  z-index: 1;
   /* sub-menu */
   /*
 		&:first-child li{
@@ -1308,7 +1309,7 @@ body.home::after {
 --------------------------------------------- */
 .caroussel {
   display: flex;
-  width: 300vw;
+  width: 500vw;
   height: 20vh;
   transition: transform .5s;
 }
@@ -1320,24 +1321,44 @@ body.home::after {
   justify-content: center;
 }
 
+.caroussel div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.caroussel div a:visited, .caroussel div a:active, .caroussel div a:link, .caroussel div a:hover {
+  color: inherit;
+}
+
 .caroussel div:nth-of-type(1) {
-  background-color: aquamarine;
-  background-image: url(https://image.freepik.com/photos-gratuite/concept-texture-fond-ecran-mur-brique_53876-31759.jpg);
-  background-size: cover;
+  background-color: #3e6b51;
 }
 
 .caroussel div:nth-of-type(2) {
-  background-color: blueviolet;
-  background-image: url(https://images7.alphacoders.com/111/thumb-350-1113092.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #8b3148;
 }
 
 .caroussel div:nth-of-type(3) {
-  background-color: brown;
+  background-color: #223777;
   background-image: url(https://img.freepik.com/vecteurs-libre/fond-ciel-brillant-soleil-vague_1017-19637.jpg?size=626&ext=jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.caroussel div:nth-of-type(4) {
+  background-color: #7e7823;
+}
+
+.caroussel div:nth-of-type(5) {
+  background-color: #501752;
+}
+
+.caroussel div a {
+  width: 100%;
+  height: 100%;
 }
 
 /*------------------------------------------------------------------------------
@@ -1351,7 +1372,7 @@ Les boutons ronds de sélection du carroussel
   align-items: center;
 }
 
-.lesBoutons a {
+.lesBoutons input[type="radio"], .lesBoutons a {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
@@ -1362,19 +1383,19 @@ Les boutons ronds de sélection du carroussel
   transition: all 1s;
 }
 
-.lesBoutons a:nth-child(1) {
+.lesBoutons input[type="radio"]:nth-child(1), .lesBoutons a:nth-child(1) {
   background-color: #bbf66e;
 }
 
-.lesBoutons a:nth-child(2) {
+.lesBoutons input[type="radio"]:nth-child(2), .lesBoutons a:nth-child(2) {
   background-color: #da7902;
 }
 
-.lesBoutons a:nth-child(3) {
+.lesBoutons input[type="radio"]:nth-child(3), .lesBoutons a:nth-child(3) {
   background-color: #fc8ec7;
 }
 
-.lesBoutons a:hover {
+.lesBoutons input[type="radio"]:hover, .lesBoutons a:hover {
   background-color: #803d3d;
 }
 
