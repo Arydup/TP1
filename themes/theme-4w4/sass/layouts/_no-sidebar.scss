@@ -26,7 +26,7 @@ body {
 		#colophon - .site-footer
 */
 
-.site-branding, #primary, #colophon {
+.site-branding, #primary{
 	margin-left: .5rem;
 	@include media-desktop{
 		margin-left: 3rem;

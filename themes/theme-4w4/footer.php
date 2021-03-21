@@ -25,6 +25,7 @@
 				//printf( esc_html__( 'Theme: %1$s by %2$s.', 'theme-4w4' ), 'theme-4w4', '<a href="http://underscores.me/">Aryane Duperron</a>' );
 				?>
 			<a href="https://cmaisonneuve.qc.ca">Collège de Maisonneuve</a>
+			<p>Page créée par Aryane Duperron</p>
 				
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

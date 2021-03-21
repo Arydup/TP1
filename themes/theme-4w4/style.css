@@ -49,9 +49,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-/*Couleurs des titres*/
-/*Couleurs pour les boutons*/
-/* Couleurs pour les liens dans les sections de la page d'accueil*/
+/* Couleurs de base dans le wordpress*/
+/*Couleurs des titres */
+/*Couleurs pour les boutons */
+/* Couleurs pour les sections de la page d'accueil */
+/* Couleurs de base dans la page d'accueil */
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -391,7 +393,7 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #6b6b6b;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -461,7 +463,7 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-  background: #fff;
+  background: #ddefff;
 }
 
 hr {
@@ -522,15 +524,15 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-  color: #4169e1;
+  color: #6b6b6b;
 }
 
 a:visited {
-  color: #353535;
+  color: #6b6b6b;
 }
 
 a:hover, a:focus, a:active {
-  color: #191970;
+  color: #253c46;
 }
 
 a:focus {
@@ -542,11 +544,11 @@ a:hover, a:active {
 }
 
 .main-navigation a {
-  color: #d6d6d5;
+  color: #6b6b6b;
 }
 
 .main-navigation a:visited {
-  color: #868686;
+  color: #6b6b6b;
 }
 
 .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
@@ -686,12 +688,12 @@ body {
 		#secondary - widget-area	
 		#colophon - .site-footer
 */
-.site-branding, #primary, #colophon {
+.site-branding, #primary {
   margin-left: .5rem;
 }
 
 @media (min-width: 800px) {
-  .site-branding, #primary, #colophon {
+  .site-branding, #primary {
     margin-left: 3rem;
   }
 }
@@ -707,6 +709,11 @@ body {
   /* nav-menu(ul principal) */
 }
 
+.main-navigation #primary-menu > li > a {
+  padding: .9rem .2rem;
+  text-align: center;
+}
+
 .main-navigation ul {
   display: none;
   position: absolute;
@@ -714,7 +721,7 @@ body {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  background-color: #000;
+  background-color: #bdbdbd;
   z-index: 1;
   /* sub-menu */
   /*
@@ -727,7 +734,7 @@ body {
 }
 
 .main-navigation ul a {
-  border-top: 1px solid yellow;
+  border-top: 1px solid #ddefff;
   transition: all ease .5s;
 }
 
@@ -758,10 +765,11 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 27%;
   bottom: 0;
-  left: 90%;
+  left: 43%;
   right: 0;
+  z-index: 1;
 }
 
 .main-navigation ul li.focus > a[href="#"]::after,
@@ -1105,6 +1113,11 @@ body.home #primary {
   width: 100vw;
 }
 
+body.home .site-header {
+  background-color: rgba(223, 239, 255, 0.8);
+  align-self: center;
+}
+
 /*------------------------------------------------------------------------------
 Le clip-path et les propriétés de l'accueil
 ------------------------------------------------------------------------------*/
@@ -1119,7 +1132,7 @@ body.home::after {
   right: 0;
   clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
   z-index: -1;
-  background-color: #9e9e9e;
+  background-color: rgba(181, 219, 255, 0.8);
 }
 
 @media (min-width: 600px) {
@@ -1152,6 +1165,27 @@ body.home::after {
   font-weight: normal;
   color: #003;
   margin-top: 0;
+}
+
+/*------------------------------------------------------------------------------
+Pour le footer
+----------------------------------------------------------------------------- */
+#colophon {
+  background-color: rgba(181, 219, 255, 0.8);
+  height: 100px;
+  margin-top: 100px;
+  font-size: clamp(1.5rem, -0.875rem + 4.333vw, 2rem);
+}
+
+@media (min-width: 600px) {
+  #colophon {
+    height: 120px;
+    text-align: left;
+  }
+}
+
+#colophon p {
+  font-size: clamp(0.7rem, -0.875rem + 8.333vw, 1rem);
 }
 
 /*
@@ -1210,7 +1244,7 @@ body.home::after {
 }
 
 .liste-cours h2 {
-  font-size: 2rem;
+  font-size: clamp(0.9rem, -0.875rem + 8.333vw, 3rem);
   text-decoration: underline;
 }
 
@@ -1227,7 +1261,6 @@ body.home::after {
   margin: 10px;
   padding: 15px;
   box-shadow: inset 4px 4px 15px 0px #000000;
-  transition: all ease 0.5s;
   /* -----------------------------------------------------------------
             Ajout d'une division par rapport à l'exercice dans les sections
             pour mettre un fond blanc devant le fond de couleur
@@ -1263,11 +1296,13 @@ body.home::after {
 
 .liste-cours section article div p {
   font-size: .7rem;
+  font-size: clamp(0.7rem, -0.875rem + 8.333vw, 1rem);
   font-weight: bold;
 }
 
 .liste-cours section article div a {
   font-size: 1.5rem;
+  font-size: clamp(1.5rem, -0.875rem + 4.333vw, 2.2rem);
   text-align: center;
   font-weight: bold;
   text-decoration: none;
@@ -1281,13 +1316,13 @@ body.home::after {
   color: #3e6b51;
   background-color: rgba(0, 255, 0, 0.3);
   background-position: bottom;
+  /* Les svg qui suivent ont été trouvés sur le site https://www.svgbackgrounds.com/ */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23AE9' points='120 120 60 120 90 90 120 60 120 0 120 0 60 60 0 0 0 60 30 90 60 120 120 120 '/%3E%3C/svg%3E");
 }
 
 .liste-cours section .Spécifique {
   color: #8b3148;
-  background-color: #cc5577;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23cc5577' width='11' height='11'/%3E%3Crect fill='%23ce5776' x='10' width='11' height='11'/%3E%3Crect fill='%23d05a76' y='10' width='11' height='11'/%3E%3Crect fill='%23d15c75' x='20' width='11' height='11'/%3E%3Crect fill='%23d35f74' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23d46174' y='20' width='11' height='11'/%3E%3Crect fill='%23d66473' x='30' width='11' height='11'/%3E%3Crect fill='%23d76673' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23d96972' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23da6c72' y='30' width='11' height='11'/%3E%3Crect fill='%23db6e71' x='40' width='11' height='11'/%3E%3Crect fill='%23dc7171' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23dd7471' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23de7671' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23df7971' y='40' width='11' height='11'/%3E%3Crect fill='%23e07c71' x='50' width='11' height='11'/%3E%3Crect fill='%23e17e71' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23e28171' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23e38471' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23e38771' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23e48972' y='50' width='11' height='11'/%3E%3Crect fill='%23e58c72' x='60' width='11' height='11'/%3E%3Crect fill='%23e58f73' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23e69173' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23e69474' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23e79775' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23e79a75' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23e89c76' x='70' width='11' height='11'/%3E%3Crect fill='%23e89f77' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23e8a278' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23e9a47a' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23e9a77b' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23e9aa7c' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23e9ac7e' x='80' width='11' height='11'/%3E%3Crect fill='%23eaaf7f' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23eab281' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%23eab482' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%23eab784' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%23eaba86' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23ebbc88' x='90' width='11' height='11'/%3E%3Crect fill='%23ebbf8a' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23ebc18c' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23ebc48e' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23ebc790' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23ebc992' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23ebcc94' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23ebce97' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23ebd199' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23ecd39c' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23ecd69e' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23ecd8a1' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23ecdba4' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23ecdda6' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23ece0a9' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23ede2ac' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23ede4af' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23ede7b2' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23ede9b5' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23eeecb8' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23EEB' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23ffb3b3' width='11' height='11'/%3E%3Crect fill='%23ffb4b4' x='10' width='11' height='11'/%3E%3Crect fill='%23ffb4b4' y='10' width='11' height='11'/%3E%3Crect fill='%23feb5b5' x='20' width='11' height='11'/%3E%3Crect fill='%23feb6b6' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23feb6b6' y='20' width='11' height='11'/%3E%3Crect fill='%23feb7b7' x='30' width='11' height='11'/%3E%3Crect fill='%23fdb8b8' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23fdb9b8' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23fdb9b9' y='30' width='11' height='11'/%3E%3Crect fill='%23fdbaba' x='40' width='11' height='11'/%3E%3Crect fill='%23fdbbbb' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23fcbbbb' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23fcbcbc' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23fcbdbd' y='40' width='11' height='11'/%3E%3Crect fill='%23fcbdbd' x='50' width='11' height='11'/%3E%3Crect fill='%23fbbebe' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23fbbfbf' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23fbbfbf' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23fbc0c0' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23fac1c1' y='50' width='11' height='11'/%3E%3Crect fill='%23fac1c1' x='60' width='11' height='11'/%3E%3Crect fill='%23fac2c2' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23f9c3c3' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23f9c3c3' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23f9c4c4' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23f9c5c5' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23f8c6c5' x='70' width='11' height='11'/%3E%3Crect fill='%23f8c6c6' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23f8c7c7' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23f8c8c8' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23f7c8c8' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23f7c9c9' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23f7caca' x='80' width='11' height='11'/%3E%3Crect fill='%23f6caca' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23f6cbcb' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%23f6cccc' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%23f5cccc' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%23f5cdcd' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23f5cece' x='90' width='11' height='11'/%3E%3Crect fill='%23f5cece' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23f4cfcf' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%23f4d0d0' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%23f4d0d0' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23f3d1d1' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23f3d2d2' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%23f3d2d2' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23f2d3d3' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23f2d4d4' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23f2d4d4' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23f1d5d5' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23f1d6d6' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23f1d6d6' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23f0d7d7' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23f0d8d8' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23efd8d8' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23efd9d9' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%23efdada' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23eedada' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23eedbdb' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
   background-size: cover;
 }
 
@@ -1309,12 +1344,14 @@ body.home::after {
   background-repeat: repeat-x, repeat;
   background-size: cover, auto;
   background-color: #330055;
+  /* Le second svg a été créé sur https://getwaves.io/ */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='auto' viewBox='0 0 1440 320'%3E%3Cpath fill='%23330055' fill-opacity='1' d='M0,128L20,149.3C40,171,80,213,120,213.3C160,213,200,171,240,160C280,149,320,171,360,197.3C400,224,440,256,480,277.3C520,299,560,309,600,293.3C640,277,680,235,720,218.7C760,203,800,213,840,234.7C880,256,920,288,960,293.3C1000,299,1040,277,1080,245.3C1120,213,1160,171,1200,154.7C1240,139,1280,149,1320,149.3C1360,149,1400,139,1420,133.3L1440,128L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233a015d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23410165' cx='50' cy='100' r='50'/%3E%3Cg fill='%2348026e' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23500376' cx='50' cy='200' r='50'/%3E%3Cg fill='%2357047e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f0587' cx='50' cy='300' r='50'/%3E%3Cg fill='%2367068f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0798' cx='50' cy='400' r='50'/%3E%3Cg fill='%237707a0' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238008a9' cx='50' cy='500' r='50'/%3E%3Cg fill='%238909b1' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%239109ba' cx='50' cy='600' r='50'/%3E%3Cg fill='%239a09c3' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a309cb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ad09d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b608dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c007e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c905ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d303f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Local/caroussel
 --------------------------------------------- */
 .caroussel {
+  margin-top: 50px;
   display: flex;
   width: 500vw;
   height: 20vh;
@@ -1334,7 +1371,7 @@ body.home::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-decoration: none;
   transition: all ease 0.5s;
 }
