@@ -10,8 +10,6 @@
     d'un clique à côté
     --------------------------------------------------------------------------*/
     burger.addEventListener('mousedown', function(){
-        console.log(burger.id);
-        //Mettre si contient le menu toggle
         if(!bar1.classList.contains('ouvrirX1')){
             bar1.classList.remove('fermerX1');
             bar1.classList.add('ouvrirX1');
@@ -32,7 +30,8 @@
     })
 
     /*--------------------------------------------------------------------------
-    Empêche les animations de fonctionner lors du changement de grandeur de la fenêtre
+    Empêche les animations du carroussel de fonctionner lors du changement de 
+    grandeur de la fenêtre
     --------------------------------------------------------------------------*/
     let redimentionnementTemps;
     window.addEventListener("resize", () => {
