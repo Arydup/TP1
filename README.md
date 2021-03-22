@@ -11,5 +11,3 @@ Site wordpress coloré pour visualiser les cours du programme tim.
 
 Lien vers mon github : https://github.com/Arydup/
 Lien vers ma page Wordpress : https://arydup.github.io/TP1/
-
-Lien externe (si disponible)
