@@ -1,3 +1,6 @@
+/*------------------------------------------------------------------------------
+Fonction qui déplace horizontalement le carrousel selon le bouton touché
+----------------------------------------------------------------------------- */
 (function(){
 			let bout1 = document.getElementById('0');
 			//console.log(bout1.id);

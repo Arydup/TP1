@@ -1,6 +1,10 @@
 /* Variables */
 $tempsAnim : 0.3s;
 
+
+/*------------------------------------------------------------------------------
+Les propriétés générales
+------------------------------------------------------------------------------*/
 body.home{
     width: 100vw;
     height: 100vh;
@@ -20,7 +24,7 @@ body.home{
 }
 
 /*------------------------------------------------------------------------------
-Le clip-path et les propriétés de l'accueil
+Le clip-path de l'accueil
 ------------------------------------------------------------------------------*/
 body.home::after{
     width: 100%;
@@ -31,19 +35,21 @@ body.home::after{
     bottom: 0;
     left: 0;
     right: 0;
-    //clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
     clip-path: polygon(50% 30%, 0 0, 100% 0);
     z-index: -1;
     background-color: $color__clip;
 
     @include media-tablette {
-        //clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
         clip-path: polygon(0 0, 0 14%, 30% 50%, 0% 80%, 0 100%, 50% 70%, 100% 100%, 100% 80%, 70% 50%, 100% 16%, 100% 0, 50% 30%);
 
     }
 
 }
 
+
+/*------------------------------------------------------------------------------
+Les propriétés du header
+------------------------------------------------------------------------------*/
 .site-title {
     font-family: $font__title;
     font-size: clamp(.8rem, #{"-0.875rem + 5.633vw"}, 2.5rem);
@@ -67,6 +73,7 @@ body.home::after{
     color: #003;
     margin-top: 0;
 }
+
 /*------------------------------------------------------------------------------
 Pour le footer
 ----------------------------------------------------------------------------- */
@@ -83,55 +90,10 @@ Pour le footer
         font-size: clamp(.7rem, #{"-0.875rem + 8.333vw"}, 1rem);
     }
 }
-/*
-.accueil{
-    margin: 0 auto;
-    padding: 0px;
-    display: block;
-    font-size: clamp(.8rem, #{"-0.875rem + 8.333vw"}, 2rem);
-    @include media-desktop{
-        display: flex;
-        margin: 0px;
-    }
-    ul{
-        list-style-type: none;
-        text-align: center;
-        margin-left: 0;
-        padding: 0;
-        flex-basis: 100%;
-        @include media-desktop{
-            text-align: left;
-            margin-left: 3rem;
-            display: block;
-        }
-    }
-    img{
-        display: block;
-    }
-}
 
-.home article{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    @include media-desktop{
-      display: block;  
-    }
-}
-
-.accueil .wp-block-column{
-    margin-left: 0px;
-}
-
-.home .site-main p{
-    margin-left: 3em;
-}
-
-.page-title{
-    margin-left: 3rem;
-}*/
-
+/*------------------------------------------------------------------------------
+Propriétés de la liste des cours et de la section centrale
+----------------------------------------------------------------------------- */
 .liste-cours{
     display: flex;
     flex-direction: column;
@@ -139,7 +101,6 @@ Pour le footer
     justify-content: space-around;
 
     h2{
-        //color: grey;
         font-size: clamp(.9rem, #{"-0.875rem + 8.333vw"}, 3rem);
         text-decoration: underline;
     }
@@ -164,7 +125,6 @@ Pour le footer
                         transform: scale(1.2);
                     }
                     a{
-                        //color: grey;
                         transform: scale(0.9);
                     }
                 }
@@ -213,12 +173,13 @@ Pour le footer
             
         } //Fin article
 
+        /*----------------------------------------------------------------------
+        Les classes et transitions de chaque type de cours
+        --------------------------------------------------------------------- */
         .Web{
             transition: all cubic-bezier(.94,.21,.64,1.34) $tempsAnim;
-            //opacity: 0.5;
             color: $color__link__web;
             background-color: $color__background__web;
-            //background-color: rgb(152, 233, 183);
             background-position: bottom;
             /* Les svg qui suivent ont été trouvés sur le site https://www.svgbackgrounds.com/ */
             background-image:  
