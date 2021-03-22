@@ -6,7 +6,7 @@ $duree : .2s;
 $epaisseur : 8%;
 
 /*Empêche les animations de fonctionner lors du changement de grandeur de la fenêtre*/
-.arret-animation .nav-menu, .arret-animation .caroussel {
+.arret-animation .nav-menu, .arret-animation .caroussel , .arret-animation article{
     animation: none !important;
     transition: none !important;
 }
@@ -40,12 +40,10 @@ Bouton burger
         }
         &:nth-of-type(2){
             clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
-            //clip-path: polygon(50% 45%, 50% 45%, 50% 55%, 50% 55%);
             background-color: rgb(164, 184, 112);
         }
         &:nth-of-type(3){
             clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
-            //clip-path: polygon(-5% 95%, 95% -5%, 105% 5%, 5% 105%);
             background-color: rgb(164, 184, 112);
             z-index: 1;
         }
@@ -60,7 +58,6 @@ Animations de la première barre bar1 (Créer une boucle pour le pattern)
         clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
     }
     100%{
-        //clip-path: polygon(5% -5%, 105% 95%, 95% 105%, -5% 5%);
         clip-path: polygon($epaisseur (-$epaisseur), (100%+$epaisseur) (100%-$epaisseur), (100%-$epaisseur) (100%+$epaisseur), (-$epaisseur) $epaisseur);
     }
 }
