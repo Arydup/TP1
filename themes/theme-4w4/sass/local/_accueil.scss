@@ -10,6 +10,9 @@ body.home{
     .site-header{
         background-color: $color__header;
         align-self: center;
+        img{
+            margin-top: 30px;
+        }
     }
 }
 
@@ -18,19 +21,21 @@ Le clip-path et les propriétés de l'accueil
 ------------------------------------------------------------------------------*/
 body.home::after{
     width: 100%;
-    height: 250%;
+    height: 400%;
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
+    //clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
+    clip-path: polygon(50% 30%, 0 0, 100% 0);
     z-index: -1;
     background-color: $color__clip;
 
     @include media-tablette {
-        clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
+        //clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
+        clip-path: polygon(0 0, 0 14%, 30% 50%, 0% 80%, 0 100%, 50% 70%, 100% 100%, 100% 80%, 70% 50%, 100% 16%, 100% 0, 50% 30%);
 
     }
 

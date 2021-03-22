@@ -61,14 +61,6 @@
 			content: "\2B9F";
 		}
 
-		/*
-		&:first-child li{
-			border-top: 2px dotted aquamarine;
-		}
-		&:first-child li > a{
-			border-top: none;
-		}*/
-
 	}	/* nav-menu(ul principal) */
 
 		 
@@ -97,13 +89,12 @@
 	.current-menu-ancestor > a {
 	}
 }	/* Fin de main-navigation */
+
 /* -----------------------------------------------------------------------------
 Bouton burger 
 ------------------------------------------------------------------------------*/
 .menu-toggle {
 	padding :0;
-//	transition : transform .25s;
-//	transform : rotate(0deg);
 	border : 0;
 }
 .menu-toggle:hover,
@@ -119,12 +110,6 @@ Bouton burger
 .menu-toggle:active {
     transform: scale(0.99);
 }
-
-/*
-.main-navigation.toggled .menu-toggle{
-	transform : rotate(90deg);
-}
-*/
 
 .menu-toggle,
 .main-navigation.toggled ul {

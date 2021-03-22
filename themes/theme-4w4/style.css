@@ -52,6 +52,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Couleurs de base dans le wordpress*/
 /*Couleurs des titres */
 /*Couleurs pour les boutons */
+/* Couleurs pour les sections du carroussel */
 /* Couleurs pour les sections de la page d'accueil */
 /* Couleurs de base dans la page d'accueil */
 /*--------------------------------------------------------------
@@ -724,13 +725,6 @@ body {
   background-color: #bdbdbd;
   z-index: 1;
   /* sub-menu */
-  /*
-		&:first-child li{
-			border-top: 2px dotted aquamarine;
-		}
-		&:first-child li > a{
-			border-top: none;
-		}*/
 }
 
 .main-navigation ul a {
@@ -811,11 +805,6 @@ Bouton burger
   transform: scale(0.99);
 }
 
-/*
-.main-navigation.toggled .menu-toggle{
-	transform : rotate(90deg);
-}
-*/
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
@@ -1118,26 +1107,30 @@ body.home .site-header {
   align-self: center;
 }
 
+body.home .site-header img {
+  margin-top: 30px;
+}
+
 /*------------------------------------------------------------------------------
 Le clip-path et les propriétés de l'accueil
 ------------------------------------------------------------------------------*/
 body.home::after {
   width: 100%;
-  height: 250%;
+  height: 400%;
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  clip-path: polygon(100% 90%, 100% 100%, 70% 100%);
+  clip-path: polygon(50% 30%, 0 0, 100% 0);
   z-index: -1;
   background-color: rgba(181, 219, 255, 0.8);
 }
 
 @media (min-width: 600px) {
   body.home::after {
-    clip-path: polygon(100% 0, 100% 80%, 82% 100%, 18% 100%, 78% 0);
+    clip-path: polygon(0 0, 0 14%, 30% 50%, 0% 80%, 0 100%, 50% 70%, 100% 100%, 100% 80%, 70% 50%, 100% 16%, 100% 0, 50% 30%);
   }
 }
 
@@ -1386,26 +1379,26 @@ Pour le footer
 }
 
 .caroussel div:nth-of-type(1) {
-  background-color: #3e6b51;
+  background-color: #8db69e;
 }
 
 .caroussel div:nth-of-type(2) {
-  background-color: #8b3148;
+  background-color: #c899a5;
 }
 
 .caroussel div:nth-of-type(3) {
-  background-color: #223777;
+  background-color: #a3b1db;
   background-image: url(https://img.freepik.com/vecteurs-libre/fond-ciel-brillant-soleil-vague_1017-19637.jpg?size=626&ext=jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .caroussel div:nth-of-type(4) {
-  background-color: #7e7823;
+  background-color: #dfdcb0;
 }
 
 .caroussel div:nth-of-type(5) {
-  background-color: #501752;
+  background-color: #ddb8df;
 }
 
 /*------------------------------------------------------------------------------
@@ -1419,31 +1412,27 @@ Les boutons ronds de sélection du carroussel
   align-items: center;
 }
 
-.lesBoutons input[type="radio"], .lesBoutons a {
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  line-height: normal;
-  padding: 0px;
-  border: 2px solid #777777;
-  margin: 2px;
-  transition: all 1s;
+.lesBoutons input[type="radio"] {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
 }
 
-.lesBoutons input[type="radio"]:nth-child(1), .lesBoutons a:nth-child(1) {
-  background-color: #bbf66e;
+.lesBoutons input[type='radio']:after {
+  transition: all ease .5s;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid rgba(181, 219, 255, 0.8);
 }
 
-.lesBoutons input[type="radio"]:nth-child(2), .lesBoutons a:nth-child(2) {
-  background-color: #da7902;
-}
-
-.lesBoutons input[type="radio"]:nth-child(3), .lesBoutons a:nth-child(3) {
-  background-color: #fc8ec7;
-}
-
-.lesBoutons input[type="radio"]:hover, .lesBoutons a:hover {
-  background-color: #803d3d;
+.lesBoutons input[type='radio']:checked:after {
+  background-color: #118617;
 }
 
 /* Local/burger
@@ -1467,6 +1456,9 @@ Bouton burger
   height: 3rem;
   border: none;
   border-radius: 50%;
+  margin-left: .5rem;
+  margin-bottom: .5rem;
+  background-color: none;
   overflow: hidden;
 }
 
@@ -1484,17 +1476,17 @@ Bouton burger
 
 #burger div:nth-of-type(1) {
   clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
-  background-color: #c1f62d;
+  background-color: #a4b870;
 }
 
 #burger div:nth-of-type(2) {
   clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
-  background-color: #3c00ff;
+  background-color: #a4b870;
 }
 
 #burger div:nth-of-type(3) {
   clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
-  background-color: #ff0077;
+  background-color: #a4b870;
   z-index: 1;
 }
 

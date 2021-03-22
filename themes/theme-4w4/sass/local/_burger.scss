@@ -20,6 +20,9 @@ Bouton burger
     height: $largeur_burger;
     border: none;
     border-radius: 50%;
+    margin-left: .5rem;
+    margin-bottom: .5rem;
+    background-color: none;
     overflow: hidden;
     @include media-tablette{
         display: none;
@@ -33,17 +36,17 @@ Bouton burger
             //État initial
             clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%);
             //État final : clip-path: polygon(5% -5%, 105% 95%, 95% 105%, -5% 5%);
-            background-color: rgb(193, 246, 45);
+            background-color: rgb(164, 184, 112);
         }
         &:nth-of-type(2){
             clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
             //clip-path: polygon(50% 45%, 50% 45%, 50% 55%, 50% 55%);
-            background-color: rgb(60, 0, 255);
+            background-color: rgb(164, 184, 112);
         }
         &:nth-of-type(3){
             clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%);
             //clip-path: polygon(-5% 95%, 95% -5%, 105% 5%, 5% 105%);
-            background-color: rgb(255, 0, 119);
+            background-color: rgb(164, 184, 112);
             z-index: 1;
         }
     }
@@ -115,13 +118,11 @@ Animations de la dernière barre bar3 (Créer une boucle pour le pattern)
     }
     100%{
         clip-path: polygon((-$epaisseur) (100%-$epaisseur), (100%-$epaisseur) (-$epaisseur), (100%+$epaisseur) $epaisseur, $epaisseur (100%+$epaisseur));
-        //clip-path: polygon($epaisseur (-$epaisseur), (100%+$epaisseur) (100%-$epaisseur), (100%-$epaisseur) (100%+$epaisseur), (-$epaisseur) $epaisseur);
     }
 }
 
 @keyframes fermerX3{
     0%{
-        //clip-path: polygon(-5% 95%, 95% -5%, 105% 5%, 5% 105%);
         clip-path: polygon((-$epaisseur) (100%-$epaisseur), (100%-$epaisseur) (-$epaisseur), (100%+$epaisseur) $epaisseur, $epaisseur (100%+$epaisseur));
     }
     100%{
